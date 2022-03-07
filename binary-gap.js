@@ -41,3 +41,4 @@ function padZero(len) {
 
 const num = 1041;
 console.log(num.toString(2), '=>', solution(num));
+// 10000010001 => 5
