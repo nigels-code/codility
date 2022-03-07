@@ -6,7 +6,7 @@
 
   Write a function:
 
-  class Solution { public int solution(int N); }
+  function solution(N);
 
   that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
 
@@ -39,9 +39,5 @@ function padZero(len) {
 	return '1' + s + '1';
 }
 
-test(10491);
-
-function test(num) {
-	console.log('\n', num.toString(2), '\n');
-	console.log('\n=>', solution(num));
-}
+const num = 1041;
+console.log(num.toString(2), '=>', solution(num));
