@@ -25,3 +25,12 @@
   each element of array A is an integer within the range [1..(N + 1)].
   
 */
+
+function solution(A) {
+	const len = A.length;
+	const total = A.reduce((x, y) => x + y);
+	const totalWithMissing = ((len + 1) * (len + 2)) / 2;
+	return totalWithMissing - total;
+}
+
+console.log(solution([2, 3, 1, 4, 5, 7]));
