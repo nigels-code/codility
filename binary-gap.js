@@ -39,6 +39,5 @@ function padZero(len) {
 	return '1' + s + '1';
 }
 
-const num = 1041;
-console.log(num.toString(2), '=>', solution(num));
+console.log(Number(1041).toString(2), '=>', solution(1041));
 // 10000010001 => 5
