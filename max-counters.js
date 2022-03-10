@@ -56,17 +56,18 @@
 
 function solution(N, A) {
 	const counters = new Array(N).fill(0);
-	let max = 0;
-	for (let i = 0; i < A.length; i++) {
-		if (A[i] === N + 1) {
-			for (let j = 0; j < N; j++) {
-				counters[j] = max;
-			}
-		} else {
-			const newVal = counters[A[i] - 1] + 1;
-			counters[A[i] - 1] = newVal;
-			max = Math.max(max, newVal);
-		}
+	let min,
+		max = 0;
+	A.forEach((elem) => {
+		const index = elem - 1;
+		if (elem > N) min = max;
+		else if (counters[index] < min) counters[index] = min + 1;
+		else counters[index] += 1;
+		if (elem <= N) max = Math.max(counters[index], max);
+		console.log(elem, counters, max);
+	});
+	for (let i = 0; i < counters.length; i++) {
+		if (counters[i] < min) counters[i] = min;
 	}
 	return counters;
 }
